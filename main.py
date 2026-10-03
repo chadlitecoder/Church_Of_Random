@@ -37,6 +37,7 @@ while True:
         print(f"GOD said {yn[c]}")
   
     elif cmd=="custom":
+        custom_choices=list()
         print("Write 'done' when finished.")
         while True:
             custom_choice=input(f"Add a custom choice {len(custom_choices)+1}: ")
