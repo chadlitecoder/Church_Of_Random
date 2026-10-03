@@ -1,5 +1,17 @@
-import requests
+#Installing required packages
+import subprocess
 from pathlib import Path
+import sys
+with open(Path(__file__).parent/'requirements.txt','r') as file:
+    packages=file.read().split('\n')
+for package in packages:
+    try:
+        __import__(package)
+    except ImportError:
+        subprocess.check_call([sys.executable, "-m", "pip", "install", package])
+
+#main
+import requests
 import time
 from playsound3 import playsound
 
